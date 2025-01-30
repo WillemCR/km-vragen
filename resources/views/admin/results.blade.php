@@ -79,30 +79,12 @@
                 return;
             }
 
-            const isHidden = detailsTr.classList.contains('hide');
-
-            // Hide all other details rows
-            document.querySelectorAll('tr[id^="details-"]').forEach(row => {
-                row.classList.add('hide');
-            });
-
-            // Toggle current details
+            // Toggle visibility of the details row
             detailsTr.classList.toggle('hide');
-
-            // Manage other info rows visibility
-            document.querySelectorAll('.info-row').forEach(row => {
-                if (isHidden) {
-                    // When opening: hide others
-                    if (!row.id.endsWith(userId)) row.classList.add('hide');
-                } else {
-                    // When closing: show all
-                    row.classList.remove('hide');
-                }
-            });
 
             // Update button text
             const toggleText = button.querySelector('.toggle-text');
-            toggleText.textContent = isHidden ? 'Minder Details' : 'Meer Details';
+            toggleText.textContent = detailsTr.classList.contains('hide') ? 'Meer Details' : 'Minder Details';
         }
     </script>
     </body>

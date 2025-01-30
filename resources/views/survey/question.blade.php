@@ -21,11 +21,11 @@
                             Vorige
                         </button>
                     @endif
-                        <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50">
+
                             @if($currentQuestionIndex < $questions->count() - 1)
-                                Volgende
+                                    <button type="submit" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-600 focus:ring-opacity-50">Volgende
                             @else
-                                Voltooien
+                                    <button type="submit" onclick="return confirm('Weet u zeker dat u de enquête wilt voltooien?')" class="px-4 py-2 bg-purple-600 text-white rounded hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50">Voltooien
                             @endif
                         </button>
                 </div>

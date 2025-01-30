@@ -22,9 +22,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        $categories = Category::all();
         $sectors = Sector::all();
-        return view('auth.register', compact('categories', 'sectors'));
+        return view('auth.register', compact( 'sectors'));
     }
 
     /**

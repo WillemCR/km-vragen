@@ -9,6 +9,10 @@ use App\Models\Result;
 use Illuminate\Support\Facades\Auth;
 class SurveyController extends Controller
 {
+    public function start()
+    {
+        return view('survey.start');
+    }
     public function index()
     {
         $user = Auth::user();
@@ -16,6 +20,16 @@ class SurveyController extends Controller
         if (!$user->is_active){
             return redirect()->route('survey.notActive');
         }
+
+        $resultsCount = $user->results()->count();
+       if($resultsCount > 0 || session()->previousUrl() === route('survey.start')) {
+           if(!session()->previousUrl() === route('survey.previous')) {
+               session(['current_question_index' => $resultsCount]);
+           }
+        } else {
+            return redirect()->route('survey.start');
+        }
+
 
         if ($user->is_finished) {
             return redirect()->route('survey.results');
@@ -34,7 +48,7 @@ class SurveyController extends Controller
             $questions = $questions->where('pillar_id', '!=', $extraPillarId);
         }
 
-        $questions = $questions->orderBy('id')
+        $questions = $questions->orderBy('pillar_id')
             ->get();
 
         if (!session()->has('current_question_index')) {

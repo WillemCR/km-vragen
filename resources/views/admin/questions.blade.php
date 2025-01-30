@@ -9,8 +9,7 @@
     @endif
     <div class="flex flex-col">
         <div class="overflow-hidden sm:rounded-lg">
-            <a href="{{ route('admin.questions.create') }}" class="mb-4 text-indigo-600 hover:text-indigo-900">Toevoegen</a>
-            <div class="shadow border-b border-gray-200">
+            <a href="{{ route('admin.questions.create') }}" class="mb-4 inline-block px-4 py-2 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 transition duration-300">Toevoegen</a>            <div class="shadow border-b border-gray-200">
                 <table class="min-w-full table-auto divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                     <tr>

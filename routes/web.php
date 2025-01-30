@@ -66,6 +66,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/survey/results', [SurveyController::class, 'results'])->name('survey.results');
     Route::get('/survey/previous', [SurveyController::class, 'previous'])->name('survey.previous');
     Route::get('survey/notActive', [SurveyController::class, 'notActive'])->name('survey.notActive');
+    Route::get('survey/start', [SurveyController::class, 'start'])->name('survey.start');
 });
 
 // Answer Routes (assuming this is used in the survey context)

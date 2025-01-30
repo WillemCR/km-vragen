@@ -19,15 +19,16 @@ class DatabaseSeeder extends Seeder
                 'first_name' => 'Willem',
                 'last_name' => 'van Ede',
                 'email' => 'willemvanede@hotmail.nl',
-                'password' => bcrypt('wwwwwww'),
+                'password' => bcrypt('V@r1@t1eNw'),
                 'is_admin' => true,
             ]);
         User::factory()
             ->create([
-                'first_name' => 'Henk',
-                'last_name' => 'de Groot',
-                'email' => 'willemvanede@hotmail.com',
-                'password' => bcrypt('wwwwwww'),
+                'first_name' => 'André',
+                'last_name' => 'Visser',
+                'email' => 'info@keurmerksocialeonderneming.nl',
+                'password' => bcrypt('L3@r!nGp8s'),
+                'is_admin' => true,
             ]);
         // Call other seeders
         $this->call([

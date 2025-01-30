@@ -34,6 +34,10 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Category::class);
     }
+    public function results()
+    {
+        return $this->hasMany(Result::class);
+    }
 
     protected $hidden = [
         'password',
