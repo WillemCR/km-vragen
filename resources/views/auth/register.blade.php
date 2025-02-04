@@ -80,7 +80,7 @@
                 <x-input-label for="sector" :value="__('SBI Code')" class="text-gray-700" />
                 <select id="sector" name="sector" class="block mt-1 w-full border border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm">
                     @foreach($sectors as $sector)
-                        <option value="{{ $sector->id }}"> {{ !$sector->sbi_code == 0 ? $sector->sbi_code . ' ' . $sector->name : $sector->name }}</option>
+                        <option value="{{ $sector->id }}"> {{ !$sector->sbi_code == 1 ? $sector->sbi_code . ' ' . $sector->name : $sector->name }}</option>
                     @endforeach
                 </select>
                 <x-input-error :messages="$errors->get('sector')" class="mt-2" />

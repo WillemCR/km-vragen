@@ -47,11 +47,11 @@
             </select>
         </div>
         <div class="mb-4">
-            <label for="sector_id" class="block text-sm font-medium text-gray-700">Sector</label>
+            <label for="sector_id" class="block text-sm font-medium text-gray-700">SBI Code</label>
             <select name="sector_id" id="sector_id" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                 @foreach ($sectors as $sector)
                     <option value="{{ $sector->id }}" {{ old('pillar_id', $question->sector_id) == $sector->id ? 'selected' : '' }}>
-                        {{ !$sector->sbi_code == 0 ? $sector->sbi_code . ' ' . $sector->name : $sector->name }}
+                        {{ !$sector->sbi_code == 1 ? $sector->sbi_code . ' ' . $sector->name : $sector->name }}
                     </option>
                 @endforeach
             </select>

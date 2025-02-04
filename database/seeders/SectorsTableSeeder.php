@@ -14,6 +14,7 @@ class SectorsTableSeeder extends Seeder
     {
 
         $sectors = [
+            ['SBI'=>'1', 'Omschrijving'=>'Geen specifieke SBI'],
             ['SBI' => '011', 'Omschrijving' => 'Teelt van eenjarige gewassen'],
             ['SBI' => '012', 'Omschrijving' => 'Teelt van meerjarige gewassen'],
             ['SBI' => '013', 'Omschrijving' => 'Teelt van sierplanten en –bomen en bloembollen'],
